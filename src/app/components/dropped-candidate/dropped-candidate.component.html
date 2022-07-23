@@ -1,0 +1,78 @@
+<div class="candidate-component">
+  <div class="heading">Dropped</div>
+
+  <div class="candidates" *ngFor="let candidate of candidates">
+    <div class="pi">
+      <div class="picture">
+        <img src="assets/{{ candidate.picture }}" alt="profile picture" />
+      </div>
+
+      <div class="details">
+        <div class="name">
+          {{ candidate.name }}
+        </div>
+
+        <div class="designation">
+          {{ candidate.designation }}
+        </div>
+        <div class="location">
+          {{ candidate.location }}
+        </div>
+      </div>
+    </div>
+
+    <div class="status">
+      <img src="assets/{{ candidate.status1.img }}" alt="" />
+      <div class="type">
+        {{ candidate.status1.type }}
+      </div>
+      <div class="date">
+        {{ candidate.status1.date }}
+      </div>
+    </div>
+
+    <div class="status">
+      <img src="assets/{{ candidate.status2.img }}" alt="" />
+      <div class="type">
+        {{ candidate.status2.type }}
+      </div>
+      <div class="date">
+        {{ candidate.status2.date }}
+      </div>
+    </div>
+
+    <div class="image">
+      <img src="assets/Primary Copy.svg" alt="" />
+      {{ candidate.droppedDate }}
+    </div>
+
+    <div class="image">
+      <img src="assets/Primary Copy.svg" alt="" />
+      {{ candidate.lastactivity }}
+    </div>
+
+    <div class="leads">{{ candidate.leads }}</div>
+    <div class="captured">{{ candidate.captured }}</div>
+
+    <div class="comments">
+      <div class="comment">
+        {{ candidate.comment }}
+      </div>
+      <div class="dots" (click)="toggleDailog(candidate)">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+
+        <div class="dialog" *ngIf="candidate.dialog">
+          <div class="option">{{ "edit comment" | uppercase }}</div>
+          <div class="divider"></div>
+          <div class="option" (click)="hideCandidate(candidate.index)">
+            {{ "hide candidate" | uppercase }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="heading" *ngIf="candidates.length == 0">No Candidate</div>
+</div>

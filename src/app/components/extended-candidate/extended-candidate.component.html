@@ -1,0 +1,80 @@
+<div class="candidate-component">
+  <div class="heading">Offer Extended</div>
+  <div class="content" *ngFor="let candidate of candidates; let i = index">
+    <div class="pi">
+      <div class="picture">
+        <img src="assets/{{ candidate.picture }}" alt="profile picture" />
+      </div>
+
+      <div class="details">
+        <div class="name">
+          {{ candidate.name }}
+        </div>
+
+        <div class="designation">
+          {{ candidate.designation }}
+        </div>
+        <div class="location">
+          {{ candidate.location }}
+        </div>
+      </div>
+    </div>
+
+    <div class="dates" *ngFor="let date of candidate.dates">
+      <div class="type">
+        {{ date.type }}
+      </div>
+      <div class="date">
+        {{ date.date }}
+      </div>
+    </div>
+
+    <div class="status" *ngFor="let status of candidate.statusList">
+      <div class="type">
+        {{ status.type }}
+      </div>
+      <div class="list">
+        <div class="top" (click)="toggleDropdown(status)">
+          <div class="selected">
+            <img src="assets/{{ status.list[status.selected] }}" alt="" />
+          </div>
+          <div class="arrow">
+            <img src="assets/Dropdown_S_Filled.svg" alt="" />
+          </div>
+        </div>
+        <div class="bottom" *ngIf="status.open">
+          <div class="options">
+            <div
+              class="option"
+              *ngFor="let option of status.list; let i = index"
+              (click)="selectOption(status, i)"
+            >
+              <img src="assets/{{ option }}" alt="" />
+              <div class="dot" *ngIf="i == status.selected"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="comments">
+      <div class="comment">
+        {{ candidate.comment }}
+      </div>
+      <div class="dots" (click)="toggleDailog(candidate)">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+
+        <div class="dialog" *ngIf="candidate.dialog">
+          <div class="option">{{ "edit comment" | uppercase }}</div>
+          <div class="divider"></div>
+          <div class="option" (click)="hideCandidate(i)">
+            {{ "hide candidate" | uppercase }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="heading" *ngIf="candidates.length == 0">No Candidate</div>
+</div>

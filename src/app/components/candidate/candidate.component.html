@@ -1,0 +1,107 @@
+<div class="candidate-component">
+  <div class="heading">Prospects</div>
+
+  <div class="header">
+    <div class="head" style="flex: 2">Candidate Details</div>
+    <div class="head" style="flex: 3">Interview schedule</div>
+    <div class="head" style="flex: 1">Reference Check</div>
+    <div class="head" style="flex: 2">comments</div>
+  </div>
+
+  <div class="middle">
+    <div class="sections" style="flex: 2"></div>
+    <div class="sections" style="flex: 3">
+      <img src="assets/Bitmap.svg" alt="" />
+      <img src="assets/Bitmap.svg" alt="" />
+      <img src="assets/Bitmap.svg" alt="" />
+      <img src="assets/Bitmap.svg" alt="" />
+      <img src="assets/Bitmap.svg" alt="" />
+    </div>
+    <div class="sections" style="flex: 1"></div>
+    <div class="sections" style="flex: 2"></div>
+  </div>
+
+  <ngx-sortable
+    [items]="candidates"
+    style="width: 100%"
+    [listStyle]="listStyle"
+    [showHeader]="false"
+  >
+    <ng-template let-candidate>
+      <div style="width: 100%">
+        <div class="candidates">
+          <div class="pi">
+            <div class="picture">
+              <img src="assets/{{ candidate.picture }}" alt="profile picture" />
+            </div>
+
+            <div class="details">
+              <div class="name">
+                {{ candidate.name }}
+              </div>
+
+              <div class="designation">
+                {{ candidate.designation }}
+              </div>
+              <div class="location">
+                {{ candidate.location }}
+              </div>
+            </div>
+          </div>
+
+          <div class="hire">
+            <img src="assets/Filled Positive.svg" alt="" />
+            <div class="text">Hire</div>
+            <div class="date">
+              {{ candidate.interviewDate }}
+            </div>
+          </div>
+
+          <div class="feedBack">
+            <p>Awaiting</p>
+            <p>Feedback</p>
+          </div>
+
+          <div class="status">
+            <img src="assets/{{ candidate.status.img }}" alt="" />
+            <div class="type">
+              {{ candidate.status.type }}
+            </div>
+            <div class="date">
+              {{ candidate.status.date }}
+            </div>
+          </div>
+
+          <div class="image">
+            <img src="assets/Primary Copy.svg" alt="" />
+            {{ candidate.lastactivity }}
+          </div>
+
+          <div class="leads">{{ candidate.leads }}</div>
+          <div class="captured">{{ candidate.captured }}</div>
+
+          <div class="comments">
+            <div class="comment">
+              {{ candidate.comment }}
+            </div>
+            <div class="dots" (click)="toggleDailog(candidate)">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+
+              <div class="dialog" *ngIf="candidate.dialog">
+                <div class="option">{{ "edit comment" | uppercase }}</div>
+                <div class="divider"></div>
+                <div class="option" (click)="hideCandidate(candidate)">
+                  {{ "hide candidate" | uppercase }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </ngx-sortable>
+
+  <div class="heading" *ngIf="candidates.length == 0">No Candidate</div>
+</div>

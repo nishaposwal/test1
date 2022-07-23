@@ -1,0 +1,161 @@
+.candidate-component {
+  width: 100%;
+
+  .heading {
+    font-size: 1rem;
+    color: #2d2d2d;
+    margin-bottom: 1rem;
+    font-weight: bold;
+  }
+
+  .content {
+    background-color: white;
+    border: 1px solid #f3f3f3;
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+
+    .pi {
+      width: 20%;
+      display: flex;
+      align-items: center;
+
+      .picture {
+        img {
+          width: 56px;
+          height: 56px;
+          border-radius: 50%;
+        }
+      }
+
+      .details {
+        margin-left: 0.5rem;
+        .name {
+          font-weight: bold;
+          font-size: 1rem;
+          color: #2d2d2d;
+        }
+
+        .designation,
+        .location {
+          color: #8a8a8a;
+          font-size: 0.9rem;
+        }
+      }
+    }
+
+    .dates {
+      width: 10%;
+      font-size: 0.9rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .type {
+        color: #8a8a8a;
+        margin-bottom: 0.3rem;
+      }
+
+      .date {
+        color: #2d2d2d;
+      }
+    }
+
+    .status {
+      width: 10%;
+      font-size: 0.9rem;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+
+      .type {
+        color: #8a8a8a;
+        margin-bottom: 0.5rem;
+      }
+
+      .list {
+        .top {
+          display: flex;
+          .arrow {
+            margin-left: 0.5rem;
+          }
+        }
+
+        .bottom {
+          position: relative;
+          .options {
+            position: absolute;
+            top: 0;
+            left: 0;
+            box-shadow: 0px 6px 10px rgba(188, 188, 188, 0.357988);
+            border: 0.2px solid #d2d2d2;
+            border-radius: 5px;
+            background-color: white;
+
+            .option {
+              padding: 0.5rem 1rem;
+              display: flex;
+              align-items: center;
+
+              .dot {
+                width: 5px;
+                height: 5px;
+                background-color: #ffbc9c;
+                border-radius: 50%;
+                margin-left: 5px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .comments {
+      width: 20%;
+      display: flex;
+      align-items: center;
+      font-size: 0.8rem;
+      .comment {
+        color: #8a8a8a;
+        margin-right: 0.3rem;
+      }
+
+      .dots {
+        position: relative;
+        padding: 0 0.5rem;
+        .dot {
+          height: 5px;
+          width: 5px;
+          border-radius: 50%;
+          background-color: #c3c3c3;
+          margin-top: 3px;
+        }
+
+        .dialog {
+          position: absolute;
+          left: -9rem;
+          top: -2.3rem;
+          padding: 1rem 0;
+          background: #ffffff;
+          border: 0.2px solid #d2d2d2;
+          box-shadow: 0px 6px 10px rgba(188, 188, 188, 0.357988);
+          border-radius: 5px;
+
+          .option {
+            padding: 0.5rem 1rem;
+            color: #8a8a8a;
+          }
+
+          .divider {
+            margin: 0 0.5rem;
+            height: 0.5px;
+            background-color: #e6e6e6;
+          }
+        }
+      }
+    }
+  }
+}

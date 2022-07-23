@@ -1,0 +1,188 @@
+.candidate-component {
+  width: 100%;
+
+  .heading {
+    font-size: 1rem;
+    color: #2d2d2d;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+  }
+
+  .header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+    background-color: white;
+    border: 1px solid #f3f3f3;
+    color: #8a8a8a;
+    font-size: 0.9rem;
+    padding: 0.5rem;
+
+    .head {
+      text-align: center;
+      flex: 1;
+      font-weight: bold;
+    }
+  }
+
+  .middle {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0;
+
+    .sections {
+      color: #8a8a8a;
+      font-size: 0.8rem;
+      display: flex;
+      justify-content: center;
+
+      img {
+        margin: 5px;
+      }
+    }
+  }
+
+  .candidates {
+    background-color: white;
+    border: 1px solid #f3f3f3;
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+
+    .pi {
+        width: 20%;
+      display: flex;
+      align-items: center;
+
+      .picture {
+        img {
+          width: 56px;
+          height: 56px;
+          border-radius: 50%;
+        }
+      }
+
+      .details {
+        margin-left: 0.5rem;
+        .name {
+          font-weight: bold;
+          font-size: 1rem;
+          color: #2d2d2d;
+        }
+
+        .designation,
+        .location {
+          color: #8a8a8a;
+          font-size: 0.9rem;
+        }
+      }
+    }
+
+    .hire {
+        width: 10%;
+      color: #8a8a8a;
+      font-size: 0.8rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .text {
+        margin-bottom: 0.5rem;
+        margin-top: 0.2rem;
+      }
+    }
+
+
+
+    .status {
+        width: 10%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-size: 0.8rem;
+      color: #8a8a8a;
+      .type {
+        margin: 0.3rem 0 0.5rem 0;
+      }
+    }
+
+    .image {
+        width: 10%;
+      color: #8a8a8a;
+      font-size: 0.8rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    .leads,
+    .captured {
+        width: 10%;
+      font-size: 1.2rem;
+      font-weight: bold;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #8a8a8a;
+    }
+
+    .comments {
+        width: 20%;
+      display: flex;
+      align-items: center;
+      font-size: 0.8rem;
+      .comment {
+        color: #8a8a8a;
+        margin-right: 0.3rem;
+      }
+
+      .dots {
+        position: relative;
+        padding: 0 0.5rem;
+        .dot {
+          height: 5px;
+          width: 5px;
+          border-radius: 50%;
+          background-color: #c3c3c3;
+          margin-top: 3px;
+        }
+
+        .dialog {
+          position: absolute;
+          left: -9rem;
+          top: -2.3rem;
+          padding: 1rem 0;
+          background: #ffffff;
+          border: 0.2px solid #d2d2d2;
+          box-shadow: 0px 6px 10px rgba(188, 188, 188, 0.357988);
+          border-radius: 5px;
+
+          .option {
+            padding: 0.5rem 1rem;
+            color: #8a8a8a;
+          }
+
+          .divider {
+            margin: 0 0.5rem;
+            height: 0.5px;
+            background-color: #e6e6e6;
+          }
+        }
+      }
+    }
+  }
+}
+
